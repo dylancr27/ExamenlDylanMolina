@@ -2,6 +2,7 @@ cine\logic\Tanda.class
 cine\logic\Pelicula.class
 cine\presentation\tiquete\Model.class
 cine\logic\Compra.class
+cine\logic\Main.class
 cine\presentation\cartelera\Model.class
 cine\presentation\cartelera\Controller.class
 cine\presentation\tiquete\Controller.class

@@ -1,6 +1,6 @@
 package cine.logic;
 
-public class Compra {
+public class Tiquete {
     
     private int boletosGeneral;
     private int boletosAdultos;
@@ -9,16 +9,16 @@ public class Compra {
     private String numeroTarjeta;
     private String codigoTiquete;
 
-    public Compra() {
-    }
-
-    public Compra(int boletosGeneral, int boletosAdultos, String nombre, String cedula, String numeroTarjeta, String codigoTiquete) {
+    public Tiquete(int boletosGeneral, int boletosAdultos, String nombre, String cedula, String numeroTarjeta, String codigoTiquete) {
         this.boletosGeneral = boletosGeneral;
         this.boletosAdultos = boletosAdultos;
         this.nombre = nombre;
         this.cedula = cedula;
         this.numeroTarjeta = numeroTarjeta;
         this.codigoTiquete = codigoTiquete;
+    }
+
+    public Tiquete() {
     }
 
     public int getBoletosGeneral() {
@@ -69,8 +69,8 @@ public class Compra {
         this.codigoTiquete = codigoTiquete;
     }
 
-    
-    
-    
-   
+    @Override
+    public String toString() {
+        return "Tiquete{" + "boletosGeneral=" + boletosGeneral + ", boletosAdultos=" + boletosAdultos + ", nombre=" + nombre + ", cedula=" + cedula + ", numeroTarjeta=" + numeroTarjeta + ", codigoTiquete=" + codigoTiquete + '}';
+    }
 }
