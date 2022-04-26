@@ -1,14 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package cinema.logic;
+package cine.logic;
 
-/**
- *
- * @author ESCIINF
- */
-public class compra {
+public class Compra {
     
     private int boletosGeneral;
     private int boletosAdultos;
@@ -17,10 +9,10 @@ public class compra {
     private String numeroTarjeta;
     private String codigoTiquete;
 
-    public compra() {
+    public Compra() {
     }
 
-    public compra(int boletosGeneral, int boletosAdultos, String nombre, String cedula, String numeroTarjeta, String codigoTiquete) {
+    public Compra(int boletosGeneral, int boletosAdultos, String nombre, String cedula, String numeroTarjeta, String codigoTiquete) {
         this.boletosGeneral = boletosGeneral;
         this.boletosAdultos = boletosAdultos;
         this.nombre = nombre;

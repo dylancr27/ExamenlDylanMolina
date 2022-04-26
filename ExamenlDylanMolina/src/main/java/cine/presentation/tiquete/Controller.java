@@ -1,8 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
-package CarteleraController;
+package cine.presentation.tiquete;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,12 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author ESCIINF
- */
-@WebServlet(name = "carteleraController", urlPatterns = {"/presentation/mostrarIndex"})
-public class carteleraController extends HttpServlet {
+@WebServlet(name = "tiqueteController", urlPatterns = {"/tiqueteController"})
+public class Controller extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,7 +23,7 @@ public class carteleraController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       RequestDispatcher requestCar= request.getRequestDispatcher("/presentation/cartelera.jsp");
+      RequestDispatcher requestCar= request.getRequestDispatcher("/presentation/tiquete.jsp");
        requestCar.forward(request, response);
     }
 

@@ -1,33 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package CarteleraController;
+package cine.presentation.cartelera;
 
-import cinema.logic.pelicula;
+import cine.logic.Pelicula;
 
-/**
- *
- * @author ESCIINF
- */
-public class model {
- pelicula objeto1;
+public class Model {
+
     
-    
-    
-    public model(){
-    objeto1= new pelicula("","","","","","",0,0);
-    
-    }
-    
-    public pelicula getObjeto1(){
-    return objeto1;
-    }
-    
-    public void setObjeto1(pelicula objeto1){
-    this.objeto1=objeto1;}
-    
-    public String establecerFoto(pelicula peli){
+    public String setFoto(Pelicula peli){
     String fotografia;
     if(peli.getCodigo().equals("batman")){
     peli.setFotografia("/ExamenlDylanMolina/images/batman.png");

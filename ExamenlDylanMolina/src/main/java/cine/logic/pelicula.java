@@ -1,43 +1,44 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package cinema.logic;
+package cine.logic;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author ESCIINF
- */
-public class pelicula {
-    
+public class Pelicula {
+
     private String codigo;
     private String nombre;
     private String formato;
     private String duracion;
     private String genero;
-    private String Censura;
+    private String censura;
     private int precioGen;
     private int precioAM;
     private String fotografia;
-    ArrayList<tandas> tandasPeli;
 
-    public pelicula() {
-    }
-
-    public pelicula(String codigo, String nombre, String formato, String duracion, String genero, String Censura, int precioGen, int precioAM) {
+    public Pelicula(String codigo, String nombre, String formato, String duracion, String genero, String censura, int precioGen, int precioAM, String fotografia) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.formato = formato;
         this.duracion = duracion;
         this.genero = genero;
-        this.Censura = Censura;
+        this.censura = censura;
         this.precioGen = precioGen;
         this.precioAM = precioAM;
-        this.tandasPeli= new ArrayList<>();
-        this.fotografia="";
-        
+        this.fotografia = fotografia;
+    }
+
+    public Pelicula(String codigo, String nombre, String formato, String duracion, String genero, String censura, int precioGen, int precioAM) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.formato = formato;
+        this.duracion = duracion;
+        this.genero = genero;
+        this.censura = censura;
+        this.precioGen = precioGen;
+        this.precioAM = precioAM;
+        this.fotografia = "";
+    }
+
+    public Pelicula() {
     }
 
     public String getCodigo() {
@@ -81,11 +82,11 @@ public class pelicula {
     }
 
     public String getCensura() {
-        return Censura;
+        return censura;
     }
 
-    public void setCensura(String Censura) {
-        this.Censura = Censura;
+    public void setCensura(String censura) {
+        this.censura = censura;
     }
 
     public int getPrecioGen() {
@@ -112,19 +113,8 @@ public class pelicula {
         this.fotografia = fotografia;
     }
 
-    public ArrayList<tandas> getTandasPeli() {
-        return tandasPeli;
+    @Override
+    public String toString() {
+        return "Pelicula{" + "codigo=" + codigo + ", nombre=" + nombre + ", formato=" + formato + ", duracion=" + duracion + ", genero=" + genero + ", censura=" + censura + ", precioGen=" + precioGen + ", precioAM=" + precioAM + ", fotografia=" + fotografia + '}';
     }
-
-    public void setTandasPeli(ArrayList<tandas> tandasPeli) {
-        this.tandasPeli = tandasPeli;
-    }
-
-    public void setFoto(String examen1DylanMolinaimagesbatmanpng) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-    
-    
-    
 }

@@ -1,30 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package cinema.logic;
+package cine.logic;
 
-/**
- *
- * @author ESCIINF
- */
-public class tandas {
-    
+public class Tanda {
+
     private String id;
-    private String Pelicula;
+    private String pelicula;
     private String fecha;
     private String hora;
-    private int sala;
+    private String sala;
 
-    public tandas() {
-    }
-
-    public tandas(String id, String Pelicula, String fecha, String hora, int sala) {
+    public Tanda(String id, String pelicula, String fecha, String hora, String sala) {
         this.id = id;
-        this.Pelicula = Pelicula;
+        this.pelicula = pelicula;
         this.fecha = fecha;
         this.hora = hora;
         this.sala = sala;
+    }
+
+    public Tanda() {
     }
 
     public String getId() {
@@ -36,11 +28,11 @@ public class tandas {
     }
 
     public String getPelicula() {
-        return Pelicula;
+        return pelicula;
     }
 
-    public void setPelicula(String Pelicula) {
-        this.Pelicula = Pelicula;
+    public void setPelicula(String pelicula) {
+        this.pelicula = pelicula;
     }
 
     public String getFecha() {
@@ -59,15 +51,16 @@ public class tandas {
         this.hora = hora;
     }
 
-    public int getSala() {
+    public String getSala() {
         return sala;
     }
 
-    public void setSala(int sala) {
+    public void setSala(String sala) {
         this.sala = sala;
     }
 
-    
-    
-    
+    @Override
+    public String toString() {
+        return "Tanda{" + "id=" + id + ", pelicula=" + pelicula + ", fecha=" + fecha + ", hora=" + hora + ", sala=" + sala + '}';
+    }
 }
