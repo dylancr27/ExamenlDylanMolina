@@ -26,8 +26,6 @@ public class Controller extends HttpServlet {
       RequestDispatcher requestCar= request.getRequestDispatcher("/presentation/tiquete.jsp");
        requestCar.forward(request, response);
     }
-    
-    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

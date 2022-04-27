@@ -1,7 +1,7 @@
 package cine.logic;
 
 public class Tiquete {
-    
+
     private int boletosGeneral;
     private int boletosAdultos;
     private String nombre;
@@ -67,6 +67,15 @@ public class Tiquete {
 
     public void setCodigoTiquete(String codigoTiquete) {
         this.codigoTiquete = codigoTiquete;
+    }
+
+    public static String generarCodigo() {
+        String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        String codigo = "";
+        for (int i = 0; i < 7; i++) {
+            codigo += caracteres.charAt((int) Math.floor(Math.random() * caracteres.length()));
+        }
+        return codigo;
     }
 
     @Override

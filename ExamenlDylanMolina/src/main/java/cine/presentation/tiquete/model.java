@@ -8,14 +8,6 @@ public class Model {
     Tiquete current;
     ArrayList<Tiquete> listaTiquetes;
 
-    public ArrayList<Tiquete> getListaTiquetes() {
-        return listaTiquetes;
-    }
-
-    public void setListaTiquetes(ArrayList<Tiquete> listaTiquetes) {
-        this.listaTiquetes = listaTiquetes;
-    }
-
     public Model() {
         this.reset();
     }
@@ -32,5 +24,13 @@ public class Model {
 
     public void setCurrent(Tiquete current) {
         this.current = current;
+    }
+
+    public ArrayList<Tiquete> getListaTiquetes() {
+        return listaTiquetes;
+    }
+
+    public void setListaTiquetes(ArrayList<Tiquete> listaTiquetes) {
+        this.listaTiquetes = listaTiquetes;
     }
 }

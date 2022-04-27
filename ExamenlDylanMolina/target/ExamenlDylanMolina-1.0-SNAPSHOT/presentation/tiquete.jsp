@@ -10,19 +10,19 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>San Pedro Cinemas</title>
-        <link rel="stylesheet" href="/ExamenlDylanMolina/css/tiquete.css"/>
     </head>
     <body>
-         <%@include file="/presentation/header.jsp" %>
-        
-         <h1><p>Consulta de Tiquete</p></h1>
-        
-        <div class="search-bar">
-            <li><input type="text"></li>
-            <li><a href="#">Consultar Tiquete</a></li>
-            
-        </div> 
-        
-        
+        <%@include file="/presentation/Header.jsp" %>    
+        <form name="form" action="/ExamenlDylanMolina/presentation/CrearTiquete" method="post" >
+            <h1>Consulta de Tiquete</h1>  
+            <br>
+            <div class="row">
+                <div class="search-bar">
+                    <input class="form-control" placeholder=" " type="text" name="codigoInput" required>
+                </div>
+            </div>
+            <br>
+            <input type="submit" value="Buscar">   
+        </form>
     </body>
 </html>

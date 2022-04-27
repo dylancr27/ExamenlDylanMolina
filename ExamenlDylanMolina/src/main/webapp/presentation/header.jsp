@@ -5,6 +5,7 @@
         <ul>
             <li><a href="Cartelera.jsp">Cartelera</a></li>
             <li><a href="Tiquete.jsp">Tiquete</a></li>
+            <li><a href="Pagar.jsp">Pagar</a></li>
         </ul>
     </div>
 </header>
