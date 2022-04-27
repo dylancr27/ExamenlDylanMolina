@@ -13,6 +13,7 @@ public class Pelicula {
     private int precioGen;
     private int precioAM;
     private String fotografia;
+    private ArrayList<Tanda> listaTandas;
 
     public Pelicula(String codigo, String nombre, String formato, String duracion, String genero, String censura, int precioGen, int precioAM, String fotografia) {
         this.codigo = codigo;
@@ -24,6 +25,7 @@ public class Pelicula {
         this.precioGen = precioGen;
         this.precioAM = precioAM;
         this.fotografia = fotografia;
+        this.listaTandas = null;
     }
 
     public Pelicula(String codigo, String nombre, String formato, String duracion, String genero, String censura, int precioGen, int precioAM) {
@@ -36,6 +38,7 @@ public class Pelicula {
         this.precioGen = precioGen;
         this.precioAM = precioAM;
         this.fotografia = "";
+        this.listaTandas = null;
     }
 
     public Pelicula() {

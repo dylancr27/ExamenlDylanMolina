@@ -1,6 +1,7 @@
 package cine.presentation.cartelera;
 
 import cine.logic.Pelicula;
+import cine.logic.Tanda;
 import cine.logic.Tiquete;
 import java.util.ArrayList;
 
@@ -8,6 +9,8 @@ public class Model {
 
     Tiquete current;
     ArrayList<Tiquete> listaTiquetes;
+    ArrayList<Pelicula> listaPeliculas;
+    ArrayList<Tanda> listaTandas;
 
     public Model() {
         this.reset();
@@ -17,6 +20,22 @@ public class Model {
         ArrayList<Tiquete> rows = new ArrayList<>();
         current = null;
         this.setListaTiquetes(rows);
+    }
+
+    public ArrayList<Tanda> getListaTandas() {
+        return listaTandas;
+    }
+
+    public void setListaTandas(ArrayList<Tanda> listaTandas) {
+        this.listaTandas = listaTandas;
+    }
+
+    public ArrayList<Pelicula> getListaPeliculas() {
+        return listaPeliculas;
+    }
+
+    public void setListaPeliculas(ArrayList<Pelicula> listaPeliculas) {
+        this.listaPeliculas = listaPeliculas;
     }
 
     public Tiquete getCurrent() {

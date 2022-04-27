@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Map"%>
 <%@page import="cine.logic.Pelicula"%>
 <%@page import="cine.logic.Tanda"%>
@@ -6,7 +7,7 @@
 <%@page import="cine.presentation.cartelera.Model"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    HashMap<String, Pelicula> peliculas = Modelo.instance().getPeliculas();
+    ArrayList<Pelicula> peliculas = Modelo.instance().getPeliculas();
 %>
 
 <!DOCTYPE html>
@@ -21,7 +22,7 @@
         <h1>Escoge la fecha</h1>
         <div class="navbar">
             <ul>
-                <li><a href="#" onclick="myFunction()">27 de abril</a></li>
+                <li><a href="/ExamenlDylanMolina/presentation/Cartelera?=2022-04-27">27 de abril</a></li>
                 <li><a href="#">28 de Abril</a></li>
                 <li><a href="#">29 de Abril</a></li>
             </ul>
@@ -40,15 +41,15 @@
                     </tr>  
                 </thead>
                 <tbody>
-                    <% for (Map.Entry<String, Pelicula> entry : peliculas.entrySet()) {%>
+                    <% for (Pelicula entry : peliculas) {%>
                     <tr>
-                        <td><%= entry.getValue().getNombre()%></td>
-                        <td><%= entry.getValue().getFormato()%></td>
-                        <td><%= entry.getValue().getDuracion()%></td>
-                        <td><%= entry.getValue().getGenero()%></td>
-                        <td><%= entry.getValue().getCensura()%></td>
-                        <td><%= entry.getValue().getPrecioGen()%></td>
-                        <td><%= entry.getValue().getPrecioAM()%></td>
+                        <td><%= entry.getNombre()%></td>
+                        <td><%= entry.getFormato()%></td>
+                        <td><%= entry.getDuracion()%></td>
+                        <td><%= entry.getGenero()%></td>
+                        <td><%= entry.getCensura()%></td>
+                        <td><%= entry.getPrecioGen()%></td>
+                        <td><%= entry.getPrecioAM()%></td>
                     </tr>
                     <%}%>
                 </tbody>              
