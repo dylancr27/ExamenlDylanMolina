@@ -18,6 +18,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <%@include file="/presentation/Header.jsp" %>  
         <% Map<String, String> errores = (Map<String, String>) request.getAttribute("errores"); %>
         <% Map<String, String[]> form = (errores == null) ? this.getForm(model) : request.getParameterMap();%>
         <form name="form" action="/ExamenlDylanMolina/presentation/CrearTiquete" method="post" > 

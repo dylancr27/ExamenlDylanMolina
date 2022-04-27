@@ -1,4 +1,3 @@
-cine\logic\Servicio.class
 cine\logic\Tanda.class
 cine\logic\Pelicula.class
 cine\presentation\tiquete\Model.class
@@ -8,4 +7,3 @@ cine\presentation\cartelera\Model.class
 cine\presentation\cartelera\Controller.class
 cine\presentation\tiquete\Controller.class
 cine\logic\Modelo.class
-Data\Data.class

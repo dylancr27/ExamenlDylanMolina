@@ -3,7 +3,7 @@
     <img src="/ExamenlDylanMolina/images/logo.png" alt=""/>
     <div class="menu">        
         <ul>
-            <li><a href="Cartelera.jsp">Cartelera</a></li>
+            <li><a href="/ExamenlDylanMolina/presentation/Cartelera">Cartelera</a></li>
             <li><a href="Tiquete.jsp">Tiquete</a></li>
             <li><a href="Pagar.jsp">Pagar</a></li>
         </ul>

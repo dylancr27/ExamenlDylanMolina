@@ -1,10 +1,10 @@
 package cine.presentation.cartelera;
 
-import cine.logic.Servicio;
 import cine.logic.Tanda;
 import cine.logic.Tiquete;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,9 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "carteleraController", urlPatterns = {
     "/presentation/Cartelera",
     "/presentation/CrearTiquete",
-    "/ExamenlDylanMolina/presentation/Cartelera?=2022-04-27",
-    "/ExamenlDylanMolina/presentation/Cartelera?=2022-04-28",
-    "/ExamenlDylanMolina/presentation/Cartelera?=2022-04-29"
+    "/presentation/Cartelera27",
+    "/presentation/Cartelera28",
+    "/presentation/Cartelera29",
+    "/presentation/BuscarTiquete"
+
 })
 public class Controller extends HttpServlet {
 
@@ -30,8 +32,12 @@ public class Controller extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher rd;
         request.setAttribute("model", new Model());
         String viewUrl = "";
+        Model model = new Model();
+        model.setListaTandas(cine.logic.Modelo.instance().getTandas());
+        request.setAttribute("model", model);
         switch (request.getServletPath()) {
             case "/presentation/Cartelera":
                 viewUrl = this.show(request);
@@ -39,17 +45,21 @@ public class Controller extends HttpServlet {
             case "/presentation/CrearTiquete":
                 viewUrl = this.crearTiquete(request);
                 break;
-            case "/ExamenlDylanMolina/presentation/Cartelera?=2022-04-27":
+            case "/presentation/Cartelera27":
                 viewUrl = this.show27(request);
                 break;
-            case "/ExamenlDylanMolina/presentation/Cartelera?=2022-04-28":
+            case "/ExamenlDylanMolina/presentation/Cartelera28":
                 viewUrl = this.show28(request);
                 break;
-            case "/ExamenlDylanMolina/presentation/Cartelera?=2022-04-29":
+            case "/ExamenlDylanMolina/presentation/Cartelera29":
                 viewUrl = this.show29(request);
                 break;
+            case "/presentation/BuscarTiquete":
+                viewUrl = this.buscarTiquete(request);
+                break;
         }
-        request.getRequestDispatcher(viewUrl).forward(request, response);
+        rd = request.getRequestDispatcher(viewUrl);
+        rd.forward(request, response);
     }
 
     public String show(HttpServletRequest request) {
@@ -69,11 +79,11 @@ public class Controller extends HttpServlet {
     }
 
     public String showAction(HttpServletRequest request) {
-        try {
-            return "/presentation/Cartelera.jsp";
-        } catch (Exception ex) {
-            return "";
-        }
+        Model model = new Model();
+        ArrayList<Tanda> l = cine.logic.Modelo.instance().getTandas();
+        model.setListaTandas(l);
+        request.setAttribute("model", model);
+        return "/presentation/Cartelera.jsp";
     }
 
     public String showAction27(HttpServletRequest request) {
@@ -101,63 +111,54 @@ public class Controller extends HttpServlet {
     }
 
     public String tandas27(HttpServletRequest request) {
-        try {
-            Model model = (Model) request.getAttribute("model");
-            cine.logic.Modelo domainModel = cine.logic.Modelo.instance();
-            ArrayList<Tanda> l = domainModel.getTandas();
-            ArrayList<Tanda> listaTandasAux = new ArrayList<>();
-            for (int i = 0; i < l.size(); i++) {
-                if (l.get(i).getFecha().equals("2022-04-27")) {
-                    listaTandasAux.add(l.get(i));
-                }
+        String fecha = request.getParameter("fecha");
+        Model model = new Model();
+        ArrayList<Tanda> l = cine.logic.Modelo.instance().getTandas();
+        ArrayList<Tanda> listaTandasAux = new ArrayList<>();
+        for (int i = 0; i < l.size(); i++) {
+            if (l.get(i).getFecha().equals(fecha)) {
+                listaTandasAux.add(l.get(i));
             }
-            model.setListaTandas(listaTandasAux);
-            return "/presentation/Cartelera.jsp";
-        } catch (Exception ex) {
-            return "";
         }
+        model.setListaTandas(listaTandasAux);
+        request.setAttribute("model", model);
+        return "/presentation/Cartelera.jsp";
     }
 
     public String tandas28(HttpServletRequest request) {
-        try {
-            Model model = (Model) request.getAttribute("model");
-            cine.logic.Modelo domainModel = cine.logic.Modelo.instance();
-            ArrayList<Tanda> l = domainModel.getTandas();
-            ArrayList<Tanda> listaTandasAux = new ArrayList<>();
-            for (int i = 0; i < l.size(); i++) {
-                if (l.get(i).getFecha().equals("2022-04-28")) {
-                    listaTandasAux.add(l.get(i));
-                }
+        String fecha = request.getParameter("fecha");
+        Model model = new Model();
+        ArrayList<Tanda> l = cine.logic.Modelo.instance().getTandas();
+        ArrayList<Tanda> listaTandasAux = new ArrayList<>();
+        for (int i = 0; i < l.size(); i++) {
+            if (l.get(i).getFecha().equals(fecha)) {
+                listaTandasAux.add(l.get(i));
             }
-            model.setListaTandas(listaTandasAux);
-            return "/presentation/Cartelera.jsp";
-        } catch (Exception ex) {
-            return "";
         }
+        model.setListaTandas(listaTandasAux);
+        request.setAttribute("model", model);
+        return "/presentation/Cartelera.jsp";
     }
 
     public String tandas29(HttpServletRequest request) {
-        try {
-            Model model = (Model) request.getAttribute("model");
-            cine.logic.Modelo domainModel = cine.logic.Modelo.instance();
-            ArrayList<Tanda> l = domainModel.getTandas();
-            ArrayList<Tanda> listaTandasAux = new ArrayList<>();
-            for (int i = 0; i < l.size(); i++) {
-                if (l.get(i).getFecha().equals("2022-04-29")) {
-                    listaTandasAux.add(l.get(i));
-                }
+        String fecha = request.getParameter("fecha");
+        Model model = new Model();
+        ArrayList<Tanda> l = cine.logic.Modelo.instance().getTandas();
+        ArrayList<Tanda> listaTandasAux = new ArrayList<>();
+        for (int i = 0; i < l.size(); i++) {
+            if (l.get(i).getFecha().equals(fecha)) {
+                listaTandasAux.add(l.get(i));
             }
-            model.setListaTandas(listaTandasAux);
-            return "/presentation/Cartelera.jsp";
-        } catch (Exception ex) {
-            return "";
         }
+        model.setListaTandas(listaTandasAux);
+        request.setAttribute("model", model);
+        return "/presentation/Cartelera.jsp";
     }
 
     public String crearTiquete(HttpServletRequest request) {
         Model model = (Model) request.getAttribute("model");
         ArrayList<Tiquete> listaTiquetes;
-        listaTiquetes = Servicio.instance().getListaTiquetes();
+        listaTiquetes = cine.logic.Modelo.instance().getListaTiquetes();
         Tiquete tiquete = new Tiquete();
         //int boletosGeneral, int boletosAdultos, String nombre, String cedula, String numeroTarjeta, String codigoTiquete
         try {
@@ -171,6 +172,24 @@ public class Controller extends HttpServlet {
             ));
             model.setListaTiquetes(listaTiquetes);
             return "/presentation/Cartelera.jsp";
+        } catch (Exception ex) {
+            return "/presentation/Cartelera.jsp";
+        }
+    }
+
+    public String buscarTiquete(HttpServletRequest request) {
+        try {
+            String aux = request.getParameter("codigoInput");
+            Model model = (Model) request.getAttribute("model");
+            Tiquete tiquete = new Tiquete();
+            ArrayList<Tiquete> lista = cine.logic.Modelo.instance().getListaTiquetes();
+            for (int i = 0; i < lista.size(); i++) {
+                if (lista.get(i).getCodigoTiquete().equals(aux)) {
+                    tiquete = lista.get(i);
+                }
+            }
+            model.setCurrent(tiquete);
+            return "/presentation/ResultadoTiquete.jsp";
         } catch (Exception ex) {
             return "/presentation/Cartelera.jsp";
         }

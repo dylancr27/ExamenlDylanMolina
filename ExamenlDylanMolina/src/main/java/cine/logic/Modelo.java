@@ -1,7 +1,6 @@
 package cine.logic;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Modelo {
 
@@ -16,6 +15,7 @@ public class Modelo {
 
     ArrayList<Pelicula> peliculas;
     ArrayList<Tanda> tandas;
+    ArrayList<Tiquete> listaTiquetes;
 
     private Modelo() {
         peliculas = new ArrayList<>();
@@ -43,6 +43,11 @@ public class Modelo {
         tandas.add(new Tanda("15", "sonic2", "2022-04-29", "02:00:00 p. m.", "6"));
         tandas.add(new Tanda("16", "animales3", "2022-04-29", "01:00:00 p. m.", "5"));
         tandas.add(new Tanda("17", "animales3", "2022-04-29", "03:30:00 p. m.", "5"));
+        listaTiquetes = new ArrayList<>();
+        listaTiquetes.add(new Tiquete(5, 4, "Henry", "666", "0000", "KGY34344"));
+        listaTiquetes.add(new Tiquete(3, 3, "Juan de Dios", "696", "1111", "kNJ9900"));
+        listaTiquetes.add(new Tiquete(2, 3, "George", "616", "2222", "jidf3434"));
+        listaTiquetes.add(new Tiquete(2, 3, "Santigo", "999", "2222", "jidf3434"));
     }
 
     public ArrayList<Pelicula> getPeliculas() {
@@ -59,5 +64,13 @@ public class Modelo {
 
     public void setTandas(ArrayList<Tanda> tandas) {
         this.tandas = tandas;
+    }
+
+    public ArrayList<Tiquete> getListaTiquetes() {
+        return listaTiquetes;
+    }
+
+    public void setListaTiquetes(ArrayList<Tiquete> listaTiquetes) {
+        this.listaTiquetes = listaTiquetes;
     }
 }

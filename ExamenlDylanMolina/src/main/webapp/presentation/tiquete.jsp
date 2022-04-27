@@ -1,9 +1,3 @@
-<%-- 
-    Document   : tiquete
-    Created on : 25 abr. 2022, 20:00:55
-    Author     : ESCIINF
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,7 +7,7 @@
     </head>
     <body>
         <%@include file="/presentation/Header.jsp" %>    
-        <form name="form" action="/ExamenlDylanMolina/presentation/CrearTiquete" method="post" >
+        <form name="form" action="/ExamenlDylanMolina/presentation/BuscarTiquete" method="post" >
             <h1>Consulta de Tiquete</h1>  
             <br>
             <div class="row">
